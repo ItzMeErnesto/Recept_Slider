@@ -1,9 +1,12 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 
 # 📦 Laad model
-model = joblib.load("model_rf.pkl")
+model_path = os.path.join(os.path.dirname(__file__), "model_rf.pkl")
+model = joblib.load(model_path)
+
 
 st.title("📊 Simulatie: voorspelling Viscositeit, pH en DS")
 st.markdown("Gebruik de sliders of typ zelf een getal in. De voorspelling wordt automatisch bijgewerkt.")
